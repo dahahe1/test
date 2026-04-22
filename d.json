@@ -4,7 +4,6 @@
     "games": [
       {
         "title": "Rec Room",
-        "titleLink": "https://cdn2.steamgriddb.com/logo_thumb/b556499e1c1bf15db9b8365d9a65f983.png",
         "imageCover": "https://cdn2.steamgriddb.com/thumb/fa9fe7204631fffdd97bf48c37581c23.jpg",
         "gameId": 11951,
         "genres": ["Social", "Multiplayer"],
