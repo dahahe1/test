@@ -56,7 +56,7 @@
       {
         "title": "Half-Life 2",
         "titleLink": "https://cdn2.steamgriddb.com/icon_thumb/ef44470a9aec6c5a2086afebd72c4192.png",
-        "titlePos": "Bottom Right"
+        "titlePos": "Bottom Right",
         "imageCover": "https://cdn2.steamgriddb.com/thumb/82ec4d2235ac023db1add9b4ebfa4f2a.jpg",
         "gameId": 2254,
         "genres": ["FPS", "Sci-Fi"],
