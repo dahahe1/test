@@ -5,7 +5,7 @@
       {
         "title": "Rec Room",
         "gameId": 11951,
-        "genres": ["Social", "VR", "Multiplayer"],
+        "genres": ["Social", "Multiplayer"],
         "platforms": ["PC", "VR", "Console", "Mobile"],
         "releaseYear": 2016,
         "status": "active",
