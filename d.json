@@ -4,7 +4,9 @@
     "games": [
       {
         "title": "Rec Room",
-        "gameId": 471710,
+        "titleLink": "https://cdn2.steamgriddb.com/logo_thumb/b556499e1c1bf15db9b8365d9a65f983.png",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/fa9fe7204631fffdd97bf48c37581c23.jpg",
+        "gameId": 11951,
         "genres": ["Social", "Multiplayer"],
         "platforms": ["PC", "VR", "Console", "Mobile"],
         "releaseYear": 2016,
@@ -13,6 +15,7 @@
       },
       {
         "title": "Slendytubbies",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/5bad9f05c80c4d996c2b39b4062d30cd.jpg",
         "gameId": 5267802,
         "genres": ["Horror"],
         "platforms": ["PC"],
@@ -22,6 +25,7 @@
       },
       {
         "title": "Slendytubbies 2",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/8206f3ea6c08adc45625136c140fb41d.jpg",
         "gameId": 5267801,
         "genres": ["Horror", "Multiplayer"],
         "platforms": ["PC"],
@@ -31,6 +35,7 @@
       },
       {
         "title": "Slendytubbies 2D",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/0aa098704cbb23365fc3f609b1bd4fd9.jpg",
         "gameId": 5308206,
         "genres": ["Horror"],
         "platforms": ["PC"],
@@ -40,6 +45,7 @@
       },
       {
         "title": "Slendytubbies 3",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/f33d1d29a1a8d37f96ea5e8c9c1ae3c0.jpg",
         "gameId": 5246879,
         "genres": ["Horror", "Survival"],
         "platforms": ["PC"],
@@ -49,6 +55,9 @@
       },
       {
         "title": "Half-Life 2",
+        "titleLink": "https://cdn2.steamgriddb.com/icon_thumb/ef44470a9aec6c5a2086afebd72c4192.png",
+        "titlePos": "Bottom Right"
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/82ec4d2235ac023db1add9b4ebfa4f2a.jpg",
         "gameId": 2254,
         "genres": ["FPS", "Sci-Fi"],
         "platforms": ["PC"],
@@ -58,6 +67,7 @@
       },
       {
         "title": "Lethal Company",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/fd729ccc51bbb0d182ac464d2f34e4f2.webm",
         "gameId": 5339777,
         "genres": ["Horror", "Co-op", "Survival"],
         "platforms": ["PC"],
