@@ -4,6 +4,7 @@
     "games": [
       {
         "title": "Rec Room",
+        "gameId": 11951,
         "genres": ["Social", "VR", "Multiplayer"],
         "platforms": ["PC", "VR", "Console", "Mobile"],
         "releaseYear": 2016,
@@ -12,6 +13,7 @@
       },
       {
         "title": "Slendytubbies",
+        "gameId": 5267802,
         "genres": ["Horror"],
         "platforms": ["PC"],
         "releaseYear": 2012,
@@ -20,6 +22,7 @@
       },
       {
         "title": "Slendytubbies 2",
+        "gameId": 5267801,
         "genres": ["Horror", "Multiplayer"],
         "platforms": ["PC"],
         "releaseYear": 2014,
@@ -28,6 +31,7 @@
       },
       {
         "title": "Slendytubbies 2D",
+        "gameId": 5308206,
         "genres": ["Horror"],
         "platforms": ["PC"],
         "releaseYear": 2015,
@@ -36,6 +40,7 @@
       },
       {
         "title": "Slendytubbies 3",
+        "gameId": 5246879,
         "genres": ["Horror", "Survival"],
         "platforms": ["PC"],
         "releaseYear": 2017,
@@ -44,6 +49,7 @@
       },
       {
         "title": "Half-Life 2",
+        "gameId": 2254,
         "genres": ["FPS", "Sci-Fi"],
         "platforms": ["PC"],
         "releaseYear": 2004,
@@ -52,6 +58,7 @@
       },
       {
         "title": "Lethal Company",
+        "gameId": 5339777,
         "genres": ["Horror", "Co-op", "Survival"],
         "platforms": ["PC"],
         "releaseYear": 2023,
