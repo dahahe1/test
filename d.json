@@ -1,1 +1,63 @@
-
+{
+  "games": {
+    "lastUpdated": "2026-04-22",
+    "games": [
+      {
+        "title": "Rec Room",
+        "genres": ["Social", "VR", "Multiplayer"],
+        "platforms": ["PC", "VR", "Console", "Mobile"],
+        "releaseYear": 2016,
+        "status": "active",
+        "notes": "hangout"
+      },
+      {
+        "title": "Slendytubbies",
+        "genres": ["Horror"],
+        "platforms": ["PC"],
+        "releaseYear": 2012,
+        "status": "active",
+        "notes": "spooky tubby"
+      },
+      {
+        "title": "Slendytubbies 2",
+        "genres": ["Horror", "Multiplayer"],
+        "platforms": ["PC"],
+        "releaseYear": 2014,
+        "status": "active",
+        "notes": "spookier tubbies"
+      },
+      {
+        "title": "Slendytubbies 2D",
+        "genres": ["Horror"],
+        "platforms": ["PC"],
+        "releaseYear": 2015,
+        "status": "active",
+        "notes": "now in 2d?"
+      },
+      {
+        "title": "Slendytubbies 3",
+        "genres": ["Horror", "Survival"],
+        "platforms": ["PC"],
+        "releaseYear": 2017,
+        "status": "active",
+        "notes": "woaaw camapgin"
+      },
+      {
+        "title": "Half-Life 2",
+        "genres": ["FPS", "Sci-Fi"],
+        "platforms": ["PC"],
+        "releaseYear": 2004,
+        "status": "active",
+        "notes": "holy old"
+      },
+      {
+        "title": "Lethal Company",
+        "genres": ["Horror", "Co-op", "Survival"],
+        "platforms": ["PC"],
+        "releaseYear": 2023,
+        "status": "active",
+        "notes": "scavenging horror"
+      }
+    ]
+  }
+}
