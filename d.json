@@ -43,28 +43,6 @@
         "notes": "now in 2d?"
       },
       {
-        "title": "Slendytubbies 3",
-        "imageCover": "https://cdn2.steamgriddb.com/thumb/f33d1d29a1a8d37f96ea5e8c9c1ae3c0.jpg",
-        "gameId": 5246879,
-        "genres": ["Horror", "Survival"],
-        "platforms": ["PC"],
-        "releaseYear": 2017,
-        "status": "active",
-        "notes": "woaaw camapgin"
-      },
-      {
-        "title": "Half-Life 2",
-        "titleLink": "https://cdn2.steamgriddb.com/icon_thumb/ef44470a9aec6c5a2086afebd72c4192.png",
-        "titlePos": "Bottom Right",
-        "imageCover": "https://cdn2.steamgriddb.com/thumb/82ec4d2235ac023db1add9b4ebfa4f2a.jpg",
-        "gameId": 2254,
-        "genres": ["FPS"],
-        "platforms": ["PC"],
-        "releaseYear": 2004,
-        "status": "active",
-        "notes": "holy old"
-      },
-      {
         "title": "Lethal Company",
         "imageCover": "https://cdn2.steamgriddb.com/thumb/fd729ccc51bbb0d182ac464d2f34e4f2.webm",
         "gameId": 5339777,
