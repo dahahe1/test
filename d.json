@@ -60,6 +60,18 @@
         "notes": "spookier tubbies"
       },
       {
+        "title": "Cuphead",
+        "imageCover": "https://cdn.jsdelivr.net/gh/dahahe1/test/cup.png",
+        "gameId": 5267801,
+        "genres": ["Run and Gun", "2D"],
+        "platforms": ["PC"],
+        "url": "https://cdn.jsdelivr.net/gh/web-ports/cuphead/index.html",
+        "releaseYear": 2014,
+        "titleLink": "https://cdn2.steamgriddb.com/logo_thumb/ff7a2112f8c3e3224ce8e3e26de1d932.png",
+        "status": "active",
+        "notes": "spookier tubbies"
+      },
+      {
         "title": "Stardew Valley",
         "imageCover": "https://cdn2.steamgriddb.com/thumb/ab08e490dd18cee04dc982dd93dbf2e0.webm",
         "gameId": 5267801,
