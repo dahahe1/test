@@ -19,6 +19,7 @@
         "genres": ["Horror"],
         "platforms": ["PC"],
         "releaseYear": 2012,
+        "game": "ST1",
         "status": "active",
         "notes": "spooky tubby"
       },
@@ -28,6 +29,7 @@
         "gameId": 5267801,
         "genres": ["Horror", "Multiplayer"],
         "platforms": ["PC"],
+        "game": "ST2",
         "releaseYear": 2014,
         "status": "active",
         "notes": "spookier tubbies"
@@ -39,6 +41,18 @@
         "genres": ["Horror"],
         "platforms": ["PC"],
         "releaseYear": 2015,
+        "game": "ST2D",
+        "status": "active",
+        "notes": "now in 2d?"
+      },
+       {
+        "title": "Mindwave",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/a060970432996afd12b1f07277f417c3.jpg",
+        "gameId": 535887,
+        "genres": ["Humor"],
+        "platforms": ["PC"],
+        "releaseYear": 2024,
+        "game": "mindwav",
         "status": "active",
         "notes": "now in 2d?"
       },
