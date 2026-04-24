@@ -1,6 +1,6 @@
 {
   "games": {
-    "lastUpdated": "2026-04-22",
+    "lastUpdated": "2026-04-24",
     "games": [
       {
         "title": "Rec Room",
@@ -20,6 +20,7 @@
         "platforms": ["PC"],
         "releaseYear": 2012,
         "game": "ST1",
+        "url": "{HTML_URL}/796.html",
         "status": "active",
         "notes": "spooky tubby"
       },
@@ -45,27 +46,50 @@
         "status": "active",
         "notes": "now in 2d?"
       },
-       {
-        "title": "Mindwave",
-        "imageCover": "https://cdn2.steamgriddb.com/thumb/a060970432996afd12b1f07277f417c3.jpg",
-        "gameId": 535887,
-        "genres": ["Humor"],
+      {
+        "title": "Whos Your Daddy?",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/e888d54c6981b4e7e92bbd874655a3bf.jpg",
+        "gameId": 5267801,
+        "genres": ["Funny", "Multiplayer"],
         "platforms": ["PC"],
-        "releaseYear": 2024,
-        "game": "mindwav",
+        "url": "{HTML_URL}/791.html",
+        "releaseYear": 2014,
         "status": "active",
-        "notes": "now in 2d?"
+        "notes": "spookier tubbies"
       },
       {
-        "title": "Lethal Company",
-        "imageCover": "https://cdn2.steamgriddb.com/thumb/fd729ccc51bbb0d182ac464d2f34e4f2.webm",
-        "gameId": 5339777,
-        "genres": ["Horror", "Multiplayer", "Survival"],
+        "title": "Stardew Valley",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/ab08e490dd18cee04dc982dd93dbf2e0.webm",
+        "gameId": 5267801,
+        "genres": ["RPG"],
         "platforms": ["PC"],
-        "releaseYear": 2023,
+        "url": "{HTML_URL}/789.html",
+        "releaseYear": 2014,
         "status": "active",
-        "notes": "scavenging horror"
-      }
+        "notes": "spookier tubbies"
+      },
+       {
+        "title": "Bart Bash",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/06f6b3852a6d26e02fd945a57c51e132.jpg",
+        "gameId": 5267801,
+        "genres": ["Weird"],
+        "platforms": ["PC"],
+        "url": "{HTML_URL}/775.html",
+        "releaseYear": 2014,
+        "status": "active",
+        "notes": "spookier tubbies"
+      },
+       {
+        "title": "Hollow Knight: Silksong",
+        "imageCover": "https://cdn2.steamgriddb.com/thumb/7282feea57f0e6cd89092df704f8e039.webm",
+        "gameId": 5267801,
+        "genres": ["Adventure"],
+        "platforms": ["PC"],
+        "url": "{HTML_URL}/771.html",
+        "releaseYear": 2014,
+        "status": "active",
+        "notes": "spookier tubbies"
+      },
     ]
   }
 }
