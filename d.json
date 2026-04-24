@@ -20,7 +20,7 @@
         "platforms": ["PC"],
         "releaseYear": 2012,
         "game": "ST1",
-        "url": "{HTML_URL}/796.html",
+        "url": "https://cdn.jsdelivr.net/gh/web-ports/slendytubbies/1/index.html",
         "status": "active",
         "notes": "spooky tubby"
       },
@@ -31,6 +31,7 @@
         "genres": ["Horror", "Multiplayer"],
         "platforms": ["PC"],
         "game": "ST2",
+        "url": "https://cdn.jsdelivr.net/gh/web-ports/slendytubbies/2/index.html",
         "releaseYear": 2014,
         "status": "active",
         "notes": "spookier tubbies"
@@ -42,6 +43,7 @@
         "genres": ["Horror"],
         "platforms": ["PC"],
         "releaseYear": 2015,
+        "url": "https://cdn.jsdelivr.net/gh/web-ports/slendytubbies/2d/index.html",
         "game": "ST2D",
         "status": "active",
         "notes": "now in 2d?"
