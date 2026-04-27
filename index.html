@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyler's Teachings</title>
+    
+    <meta property="og:title" content="xtal">
+    <meta property="og:description" content="free games that arent blockd">
+    <meta property="og:image" content="https://file.garden/aD-3AN4meRKM60om/image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/luminsdk/script@latest/lumin.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        texty: 'var(--texty)',
+                        bggy: 'var(--bggy)',
+                        bggy2: 'var(--bggy2)',
+                        panny: 'var(--panny)',
+                        pannytrans: 'var(--pannytrans)',
+                        bordy: 'var(--bordy)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --texty: #ffffff;
+            --bggy: #0a0a0a;
+            --bggy2: #1c1c1c;
+            --panny: #111111;
+            --pannytrans: rgba(17, 17, 17, 0.4);
+            --bordy: #222222;
+        }
+        body {
+            color: var(--texty);
+            font-family: ui-sans-serif, system-ui, sans-serif;
+        }
+        .slidybg {
+            background: linear-gradient(-45deg, var(--bggy), var(--bggy2), var(--bggy), var(--bggy2));
+            background-size: 400% 400%;
+            animation: bgslide 15s ease infinite;
+        }
+        @keyframes bgslide {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hidemyscroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hidemyscroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+        input[type="color"]::-webkit-color-swatch {
+            border: 1px solid var(--bordy);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="slidybg h-screen flex flex-col m-0 p-0 overflow-hidden">
+
+    <div id="fakemath" class="fixed inset-0 z-[9999999] bg-white flex flex-col font-sans overflow-y-auto">
+        <div class="bg-blue-700 text-white p-6 shadow-md">
+            <div class="max-w-6xl mx-auto flex items-center justify-between">
+                <div class="text-3xl font-black tracking-tight">Tyler's Teachings</div>
+                <div class="hidden md:flex gap-8 text-blue-100 font-medium">
+                    <span class="hover:text-white cursor-pointer transition-colors">Home</span>
+                    <span class="hover:text-white cursor-pointer transition-colors">Our Mission</span>
+                    <span class="hover:text-white cursor-pointer transition-colors">Math Tools</span>
+                    <span class="hover:text-white cursor-pointer transition-colors">Contact</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex-1 w-full max-w-6xl mx-auto p-8 flex flex-col lg:flex-row gap-16 items-center py-16">
+            <div class="flex-1 flex flex-col gap-6">
+                <div class="text-blue-600 font-bold tracking-widest uppercase text-sm">Educational Resources</div>
+                <div class="text-5xl font-extrabold text-gray-900 leading-tight">Empowering Students Through Mathematics</div>
+                <div class="text-gray-600 text-lg leading-relaxed">
+                    At Tyler's Teachings, we prioritize learning above all else. Our mission is to provide simple, distraction-free educational tools that help students master fundamental concepts. We believe that a strong foundation in math is the key to unlocking academic success and critical thinking skills.
+                </div>
+                <div class="text-gray-600 text-lg leading-relaxed">
+                    Use our featured interactive calculator tool on this page to double-check your homework, practice arithmetic, and build confidence in your problem-solving abilities. Stay focused and keep learning!
+                </div>
+                <button class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full w-fit hover:bg-blue-700 transition-colors shadow-lg mt-4 active:scale-95">Explore Lessons</button>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-[2rem] shadow-2xl w-[340px] shrink-0 border border-gray-200">
+                <div class="text-center font-bold text-gray-400 mb-5 tracking-widest text-xs uppercase">Interactive Tool</div>
+                <div id="mathscreen" class="bg-white text-gray-800 text-right p-4 rounded-xl text-4xl h-20 mb-6 overflow-hidden flex items-center justify-end tracking-wider border border-gray-200 shadow-inner font-mono"></div>
+                <div class="grid grid-cols-4 gap-3">
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">7</button>
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">8</button>
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">9</button>
+                    <button class="clickynum bg-blue-100 text-blue-700 rounded-xl p-4 text-xl font-bold hover:bg-blue-200 shadow-sm transition-all active:scale-95">/</button>
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">4</button>
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">5</button>
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">6</button>
+                    <button class="clickynum bg-blue-100 text-blue-700 rounded-xl p-4 text-xl font-bold hover:bg-blue-200 shadow-sm transition-all active:scale-95">*</button>
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">1</button>
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">2</button>
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">3</button>
+                    <button class="clickynum bg-blue-100 text-blue-700 rounded-xl p-4 text-xl font-bold hover:bg-blue-200 shadow-sm transition-all active:scale-95">-</button>
+                    <button class="clickynum bg-red-100 text-red-600 rounded-xl p-4 text-xl font-bold hover:bg-red-200 shadow-sm transition-all active:scale-95">C</button>
+                    <button class="clickynum bg-white border border-gray-200 text-gray-700 rounded-xl p-4 text-xl font-medium hover:bg-gray-100 shadow-sm transition-all active:scale-95">0</button>
+                    <button class="clickynum bg-blue-600 text-white rounded-xl p-4 text-xl font-bold hover:bg-blue-700 shadow-sm transition-all active:scale-95">=</button>
+                    <button class="clickynum bg-blue-100 text-blue-700 rounded-xl p-4 text-xl font-bold hover:bg-blue-200 shadow-sm transition-all active:scale-95">+</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-gray-100 text-center p-8 text-gray-500 text-sm mt-auto border-t border-gray-200">
+            &copy; 2026 Tyler's Teachings. All rights reserved. Education first.
+        </div>
+    </div>
+
+    <div class="flex items-center p-4 bg-pannytrans backdrop-blur-md z-50 shrink-0">
+        <img src="https://file.garden/aD-3AN4meRKM60om/image.png" alt="xtal" id="logobtn" class="h-20 mr-4 cursor-pointer">
+        
+        <svg id="clickysearchicon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer z-10 text-texty"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        
+        <div id="searchwrapper" class="flex items-center overflow-hidden transition-all duration-300 w-0 opacity-0 ml-0 border border-transparent rounded-md bg-panny">
+            <input type="text" id="typebox" placeholder="search..." class="bg-transparent px-3 py-1.5 text-sm outline-none text-texty w-56 shrink-0">
+        </div>
+
+        <div class="flex items-center gap-6 ml-6">
+            <svg id="homebtn" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer text-texty opacity-50 hover:opacity-100 transition-opacity"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <svg id="gamesbtn" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer text-texty opacity-50 hover:opacity-100 transition-opacity"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path></svg>
+            <svg id="settingsbtn" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer text-texty opacity-50 hover:opacity-100 transition-opacity"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h-.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            <svg id="datvbtn" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer text-texty opacity-50 hover:opacity-100 transition-opacity"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+            <svg id="cloakthesitebtn" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer text-texty opacity-50 hover:opacity-100 transition-opacity"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </div>
+
+        <div class="flex items-center gap-4 ml-auto text-texty opacity-50 font-medium tracking-wide">
+            <span id="thecloc">--:--</span>
+            <span id="thebatt">--%</span>
+        </div>
+    </div>
+
+    <div id="hometab" class="flex flex-col flex-1 min-h-0 overflow-y-auto hidemyscroll transition-all duration-300 opacity-100 translate-y-0 scale-100">
+        <div class="flex flex-col items-center justify-center min-h-[60vh] shrink-0" style="perspective: 1200px;">
+            <img id="dabadasslogo" src="https://file.garden/aD-3AN4meRKM60om/image.png" alt="xtal" class="w-[550px] max-w-[80vw] mb-4 drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)] pointer-events-none transition-transform duration-75 ease-out">
+            <p id="funnymsgbox" class="text-texty opacity-70 text-lg md:text-xl font-medium tracking-widest lowercase text-center drop-shadow-md transition-transform duration-75 ease-out"></p>
+        </div>
+        <div id="homestuff" class="w-full max-w-[1200px] mx-auto px-8 pb-32 flex flex-col gap-12 shrink-0"></div>
+    </div>
+
+    <div id="gamestab" class="hidden flex-1 p-4 gap-8 min-h-0 transition-all duration-300 opacity-0 translate-y-4 scale-95">
+        <div id="bigassbox" class="flex-1 flex flex-wrap gap-x-8 gap-y-16 content-start overflow-y-auto hidemyscroll pb-32 pl-4 pt-4"></div>
+
+        <div class="w-72 bg-panny rounded-2xl p-5 shrink-0 flex flex-col h-fit border border-bordy">
+            <div class="flex justify-between items-center mb-4">
+                <div class="text-texty text-sm font-bold tracking-wide">filters</div>
+                <div class="flex gap-2">
+                    <svg id="btngrid" class="w-5 h-5 cursor-pointer text-texty opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                    <svg id="btnlist" class="w-5 h-5 cursor-pointer text-texty opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </div>
+            </div>
+            <div id="clickybox" class="flex flex-wrap gap-2"></div>
+        </div>
+    </div>
+
+    <div id="settingstab" class="hidden flex-1 p-12 flex-col overflow-y-auto hidemyscroll min-h-0 transition-all duration-300 opacity-0 translate-y-4 scale-95">
+        <div class="text-4xl font-black mb-10 tracking-wide text-texty">settings</div>
+        
+        <div class="flex flex-col gap-4 pb-32">
+            <div class="flex items-center justify-between bg-panny p-6 rounded-2xl w-[450px] border border-bordy">
+                <span class="text-lg font-medium text-texty">enable 3d card tilt</span>
+                <div id="tiltswitch" class="w-14 h-7 bg-bordy rounded-full relative cursor-pointer border border-bordy transition-colors duration-300 shrink-0">
+                    <div id="tiltknob" class="w-5 h-5 bg-texty rounded-full absolute top-[2px] left-[3px] transition-all duration-300"></div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between bg-panny p-6 rounded-2xl w-[450px] border border-bordy">
+                <span class="text-lg font-medium text-texty">enable swear words</span>
+                <div id="swearswitch" class="w-14 h-7 bg-bordy rounded-full relative cursor-pointer border border-bordy transition-colors duration-300 shrink-0">
+                    <div id="swearknob" class="w-5 h-5 bg-texty rounded-full absolute top-[2px] left-[3px] transition-all duration-300"></div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between bg-panny p-6 rounded-2xl w-[450px] border border-bordy">
+                <span class="text-lg font-medium text-texty">show nsfw games</span>
+                <div id="nsfwswitch" class="w-14 h-7 bg-bordy rounded-full relative cursor-pointer border border-bordy transition-colors duration-300 shrink-0">
+                    <div id="nsfwknob" class="w-5 h-5 bg-texty rounded-full absolute top-[2px] left-[3px] transition-all duration-300"></div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between bg-panny p-6 rounded-2xl w-[450px] border border-bordy mt-6">
+                <span class="text-lg font-medium text-texty">theme</span>
+                <div class="flex gap-2">
+                    <button id="themelight" class="px-3 py-1 bg-bordy text-texty rounded">light</button>
+                    <button id="themedark" class="px-3 py-1 bg-bordy text-texty rounded">dark</button>
+                    <button id="themecustom" class="px-3 py-1 bg-bordy text-texty rounded">custom</button>
+                </div>
+            </div>
+            
+            <div id="custompickerbox" class="hidden flex-col gap-4 bg-panny p-6 rounded-2xl w-[450px] border border-bordy">
+                <div class="flex justify-between items-center">
+                    <span class="text-texty">background image (url)</span>
+                    <input type="text" id="pickbgimg" placeholder="https://..." class="bg-bggy text-texty border border-bordy px-2 py-1 rounded w-48 text-sm outline-none">
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-texty">background color</span>
+                    <input type="color" id="pickbg" class="bg-transparent border-0 cursor-pointer h-8 w-12">
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-texty">text color</span>
+                    <input type="color" id="picktext" class="bg-transparent border-0 cursor-pointer h-8 w-12">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="thetvtab" class="hidden flex-1 px-8 py-4 gap-6 min-h-0 transition-all duration-300 opacity-0 translate-y-4 scale-95 flex-col bg-[#141414]">
+        <div class="flex items-center gap-4 bg-[#222] p-3 rounded-md shrink-0 focus-within:bg-[#333] transition-colors max-w-2xl mx-auto w-full border border-transparent focus-within:border-white/50">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="opacity-50 shrink-0"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="tvsearchinput" placeholder="Movies, TV shows..." class="bg-transparent border-none outline-none text-white w-full text-lg placeholder-white/40 font-medium">
+        </div>
+        <div id="tvbigassbox" class="flex-1 flex flex-wrap gap-4 content-start overflow-y-auto hidemyscroll pb-32"></div>
+    </div>
+
+    <div id="gamewindow" class="hidden fixed inset-0 z-[9999] bg-black flex flex-col opacity-0 transition-opacity duration-300">
+        <div class="flex items-center justify-between p-4 bg-panny border-b border-bordy">
+            <div class="text-texty font-bold tracking-wide" id="whatgameisit"></div>
+            <div class="flex items-center gap-4">
+                <svg id="popoutthegamebtn" class="w-7 h-7 text-texty cursor-pointer hover:opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                <svg id="embiggenbtn" class="w-7 h-7 text-texty cursor-pointer hover:opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+                <svg id="killgamebtn" class="w-8 h-8 text-texty cursor-pointer hover:opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </div>
+        </div>
+        <iframe id="gameframe" class="w-full flex-1 border-0 bg-black" allowfullscreen="true" allow="autoplay; fullscreen; gamepad; focus-without-user-activation; keyboard-map *"></iframe>
+    </div>
+
+    <div id="ohshitbox" class="fixed bottom-4 right-4 w-96 max-h-64 overflow-y-auto z-[99999] flex flex-col gap-2 pointer-events-none"></div>
+
+    <div id="tvwarningbox" class="hidden fixed inset-0 z-[999999] bg-black/80 flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-[#141414] border border-[#333] p-8 rounded-xl max-w-lg w-full flex flex-col gap-6 shadow-2xl mx-4 relative">
+            <div class="text-2xl font-black text-white flex items-center gap-3">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                hold up!
+            </div>
+            <div class="text-white/80 text-base leading-relaxed">
+                before you watch stuff here, you <b class="text-red-400">ABSOLUTELY NEED AN ADBLOCKER</b> (like uBlock Origin). <br><br>
+                if you don't have one, you're going to get hit with nasty popups and redirects. don't say i didn't warn you.
+            </div>
+            <div class="flex gap-4 mt-2">
+                <button id="nvmimscaredbtn" class="flex-1 bg-[#333] text-white py-3 rounded font-bold hover:bg-[#444] transition-all">go back</button>
+                <button id="igotanadblockerbtn" class="flex-1 bg-white text-black py-3 rounded font-bold hover:bg-white/80 transition-all">i have one</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tvpickerbox" class="hidden fixed inset-0 z-[999999] bg-black/80 flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-[#141414] rounded-xl w-[600px] max-w-[90vw] overflow-hidden flex flex-col shadow-2xl border border-[#333] relative">
+            <button id="nvmcancelpickerbtn" class="absolute top-4 right-4 z-50 bg-[#181818] rounded-full p-2 hover:bg-white/20 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            <div class="relative w-full h-64 bg-black">
+                <img id="tvpickerbackdrop" src="" class="w-full h-full object-cover opacity-70">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent"></div>
+                <div class="absolute bottom-6 left-8 right-8">
+                    <div class="text-4xl font-black text-white drop-shadow-lg" id="tvpickertitle"></div>
+                </div>
+            </div>
+
+            <div class="p-8 flex flex-col gap-6">
+                <p id="tvpickerdesc" class="text-white/80 text-sm leading-relaxed line-clamp-3"></p>
+                
+                <div id="tvseasonstuff" class="flex gap-6 items-end">
+                    <div class="flex flex-col gap-2 flex-1">
+                        <span class="text-white/50 text-xs font-bold uppercase tracking-wider">Season</span>
+                        <div class="bg-[#333] rounded px-4 py-2 border border-[#444] focus-within:border-white transition-colors">
+                            <input type="number" id="tvseasnnum" value="1" min="1" class="bg-transparent border-none outline-none text-white w-full font-bold text-lg">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2 flex-1">
+                        <span class="text-white/50 text-xs font-bold uppercase tracking-wider">Episode</span>
+                        <div class="bg-[#333] rounded px-4 py-2 border border-[#444] focus-within:border-white transition-colors">
+                            <input type="number" id="tvepisodenum" value="1" min="1" class="bg-transparent border-none outline-none text-white w-full font-bold text-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 mt-1">
+                    <input type="checkbox" id="blankthetv" checked class="w-5 h-5 accent-white cursor-pointer">
+                    <label for="blankthetv" class="text-white/70 text-sm font-medium cursor-pointer select-none">open in about:blank (hides from history)</label>
+                </div>
+
+                <div class="flex gap-4 mt-2">
+                    <button id="watchthetvbtn" class="flex-1 bg-white text-black py-3 rounded font-bold hover:bg-white/80 transition-all flex items-center justify-center gap-2 text-lg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        Play
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let mathscreeny = document.getElementById("mathscreen");
+        let typednums = "";
+        let dafakesite = document.getElementById("fakemath");
+
+        document.querySelectorAll(".clickynum").forEach(b => {
+            b.addEventListener("click", () => {
+                let v = b.innerText;
+                if(v === "C") {
+                    typednums = "";
+                } else if(v === "=") {
+                    try {
+                        typednums = eval(typednums).toString();
+                    } catch(e) {
+                        typednums = "ERR";
+                    }
+                } else {
+                    if(typednums === "ERR") typednums = "";
+                    typednums += v;
+                }
+                
+                mathscreeny.innerText = typednums;
+
+                if(typednums === "7541") {
+                    dafakesite.remove();
+                    document.title = "xtal";
+                    ogtitle = "xtal";
+                    doalloftheshit();
+                }
+            });
+        });
+
+        let mygamez = [];
+        let pickedythings = [];
+        let wordz = "";
+
+        let ogtitle = "Tyler's Teachings";
+        let ogfavicon = "";
+        let setfavicon = (url) => {
+            let l = document.querySelector("link[rel~='icon']");
+            if(!l) {
+                l = document.createElement("link");
+                l.rel = "icon";
+                document.head.appendChild(l);
+            }
+            l.href = url;
+        };
+
+        let thehome = document.getElementById("hometab");
+        let thegames = document.getElementById("gamestab");
+        let thesetts = document.getElementById("settingstab");
+        let thetvshit = document.getElementById("thetvtab");
+
+        let whichtabrn = "home";
+        let flippinpages = false;
+        let modeislist = localStorage.getItem("xtal_listmode") === "yeah";
+
+        let is3don = localStorage.getItem("xtal_tilt") !== "nah";
+        let tilttogglr = document.getElementById("tiltswitch");
+        let tiltnugget = document.getElementById("tiltknob");
+
+        let badwords_on = localStorage.getItem("xtal_swears") === "yeah";
+        let swear_togglr = document.getElementById("swearswitch");
+        let swear_nugget = document.getElementById("swearknob");
+
+        let nasty_on = localStorage.getItem("xtal_nsfw") === "yeah";
+        let nsfw_togglr = document.getElementById("nsfwswitch");
+        let nsfw_nugget = document.getElementById("nsfwknob");
+
+        let whatisthetheme = localStorage.getItem("xtal_theme") || "dark";
+        let cbg = localStorage.getItem("xtal_cbg") || "#150030";
+        let cbgimg = localStorage.getItem("xtal_bgimg") || "";
+        let ctext = localStorage.getItem("xtal_ctext") || "#00ffcc";
+
+        let myfavs = JSON.parse(localStorage.getItem("xtal_favs") || "[]");
+        let theplaytimes = JSON.parse(localStorage.getItem("xtal_playtimes") || "{}");
+        let gamestartedat = 0;
+        let activegamerightnow = null;
+
+        let tmdbkey = "2206ab98a3adf76bf6f6cda98e32f1b0";
+        let didseetvwarn = localStorage.getItem("xtal_tvwarn") === "yeah";
+        let pickdtvid = 0;
+        let pickdtvname = "";
+        let pickdtype = "";
+
+        let thecloc = document.getElementById("thecloc");
+        let thebatt = document.getElementById("thebatt");
+
+        setInterval(() => {
+            let d = new Date();
+            let h = d.getHours();
+            let m = d.getMinutes().toString().padStart(2, '0');
+            let ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12 || 12;
+            thecloc.innerText = h + ":" + m + " " + ampm;
+        }, 1000);
+
+        if (navigator.getBattery) {
+            navigator.getBattery().then(b => {
+                let updbatt = () => { thebatt.innerText = Math.round(b.level * 100) + "% " + (b.charging ? "" : ""); };
+                updbatt();
+                b.addEventListener('levelchange', updbatt);
+                b.addEventListener('chargingchange', updbatt);
+            });
+        }
+
+        let applydathang = () => {
+            let r = document.documentElement;
+            if(whatisthetheme === "light") {
+                document.body.style.backgroundImage = "";
+                document.body.classList.add("slidybg");
+                r.style.setProperty("--texty", "#0f3b4c");
+                r.style.setProperty("--bggy", "#35add9");
+                r.style.setProperty("--bggy2", "#e2f4f9");
+                r.style.setProperty("--panny", "rgba(255, 255, 255, 0.4)");
+                r.style.setProperty("--pannytrans", "rgba(255, 255, 255, 0.2)");
+                r.style.setProperty("--bordy", "rgba(255, 255, 255, 0.6)");
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', '#35add9');
+            } else if(whatisthetheme === "dark") {
+                document.body.style.backgroundImage = "";
+                document.body.classList.add("slidybg");
+                r.style.setProperty("--texty", "#ffffff");
+                r.style.setProperty("--bggy", "#0a0a0a");
+                r.style.setProperty("--bggy2", "#1c1c1c");
+                r.style.setProperty("--panny", "#111111");
+                r.style.setProperty("--pannytrans", "rgba(17, 17, 17, 0.4)");
+                r.style.setProperty("--bordy", "#222222");
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0a0a0a');
+            } else if(whatisthetheme === "custom") {
+                if (cbgimg && cbgimg.trim() !== "") {
+                    document.body.style.backgroundImage = `url(${cbgimg})`;
+                    document.body.style.backgroundSize = "cover";
+                    document.body.style.backgroundPosition = "center";
+                    document.body.classList.remove("slidybg");
+                } else {
+                    document.body.style.backgroundImage = "";
+                    document.body.classList.add("slidybg");
+                }
+                r.style.setProperty("--texty", ctext);
+                r.style.setProperty("--bggy", cbg);
+                r.style.setProperty("--bggy2", cbg);
+                r.style.setProperty("--panny", cbg);
+                r.style.setProperty("--pannytrans", cbg);
+                r.style.setProperty("--bordy", ctext);
+                document.querySelector('meta[name="theme-color"]').setAttribute('content', cbg);
+            }
+            
+            let themebuttons = [
+                { id: "themelight", match: "light" },
+                { id: "themedark", match: "dark" },
+                { id: "themecustom", match: "custom" }
+            ];
+            
+            themebuttons.forEach(btn => {
+                let el = document.getElementById(btn.id);
+                if (el) {
+                    if (whatisthetheme === btn.match) {
+                        el.className = "px-3 py-1 bg-texty text-bggy rounded font-bold shadow-md transition-all";
+                    } else {
+                        el.className = "px-3 py-1 bg-panny text-texty border border-bordy rounded opacity-70 hover:opacity-100 transition-all";
+                    }
+                }
+            });
+        };
+
+        applydathang();
+
+        document.getElementById("themelight").onclick = () => { whatisthetheme = "light"; localStorage.setItem("xtal_theme", "light"); applydathang(); document.getElementById("custompickerbox").classList.add("hidden"); };
+        document.getElementById("themedark").onclick = () => { whatisthetheme = "dark"; localStorage.setItem("xtal_theme", "dark"); applydathang(); document.getElementById("custompickerbox").classList.add("hidden"); };
+        document.getElementById("themecustom").onclick = () => { whatisthetheme = "custom"; localStorage.setItem("xtal_theme", "custom"); applydathang(); document.getElementById("custompickerbox").classList.remove("hidden"); };
+        
+        let pbg = document.getElementById("pickbg");
+        let ptxt = document.getElementById("picktext");
+        let pbgimgy = document.getElementById("pickbgimg");
+        pbg.value = cbg;
+        ptxt.value = ctext;
+        pbgimgy.value = cbgimg;
+
+        pbg.oninput = (e) => { cbg = e.target.value; localStorage.setItem("xtal_cbg", cbg); if(whatisthetheme==="custom") applydathang(); };
+        ptxt.oninput = (e) => { ctext = e.target.value; localStorage.setItem("xtal_ctext", ctext); if(whatisthetheme==="custom") applydathang(); };
+        pbgimgy.oninput = (e) => { cbgimg = e.target.value; localStorage.setItem("xtal_bgimg", cbgimg); if(whatisthetheme==="custom") applydathang(); };
+
+        if(whatisthetheme === "custom") document.getElementById("custompickerbox").classList.remove("hidden");
+
+        let updatemodeui = () => {
+            document.getElementById("btngrid").classList.toggle("opacity-50", modeislist);
+            document.getElementById("btngrid").classList.toggle("opacity-100", !modeislist);
+            document.getElementById("btnlist").classList.toggle("opacity-50", !modeislist);
+            document.getElementById("btnlist").classList.toggle("opacity-100", modeislist);
+            
+            let dabox = document.getElementById("bigassbox");
+            if (modeislist) {
+                dabox.className = "flex-1 flex flex-col gap-4 content-start overflow-y-auto hidemyscroll pb-32 pl-4 pt-4 pr-4";
+            } else {
+                dabox.className = "flex-1 flex flex-wrap gap-x-8 gap-y-16 content-start overflow-y-auto hidemyscroll pb-32 pl-4 pt-4";
+            }
+        };
+
+        document.getElementById("btngrid").onclick = () => { modeislist = false; localStorage.setItem("xtal_listmode", "nah"); updatemodeui(); plasterthegames(); };
+        document.getElementById("btnlist").onclick = () => { modeislist = true; localStorage.setItem("xtal_listmode", "yeah"); updatemodeui(); plasterthegames(); };
+
+        let purejokes = [
+            "hi bred", "xtal", "aphex twin rules", "rec room is good", "i like games",
+            "this is a joke", "why are you still reading this", "i should add more stuff here huh",
+            "im running out of jokes", "haha", "lol", "xd", "xtally awesome", "gn-math sux",
+            "javascript is my love language", "if you see this, you are a cool person", "go guardian warrior!", "mother mother", "zeoworks", "roblox web port soon!"
+        ];
+
+        let dirtyjokes = [
+            "mr k being a bitch", "fawk!", "I FUCKING HATE WASM.RIP ALL OF YOU ARE FUCKING SKIDS I HATE YOU", "Believe the propaganda that Israel sends you😂"
+        ];
+
+        let splashtexty = document.getElementById("funnymsgbox");
+        let gigalogo = document.getElementById("dabadasslogo");
+
+        function spit_joke() {
+            let options = badwords_on ? purejokes.concat(dirtyjokes) : purejokes;
+            splashtexty.innerText = options[Math.floor(Math.random() * options.length)];
+        }
+        spit_joke();
+
+        document.addEventListener("mousemove", (e) => {
+            if (!thehome.classList.contains("hidden")) {
+                let middleofx = window.innerWidth / 2;
+                let middleofy = window.innerHeight / 2;
+                
+                let flippyup = ((e.clientY - middleofy) / middleofy) * -20;
+                let flippyside = ((e.clientX - middleofx) / middleofx) * 20;
+                let scootx = ((e.clientX - middleofx) / middleofx) * 30;
+                let scooty = ((e.clientY - middleofy) / middleofy) * 30;
+                
+                gigalogo.style.transform = `rotateX(${flippyup}deg) rotateY(${flippyside}deg) translate3d(${scootx}px, ${scooty}px, 40px)`;
+                
+                let textscootx = ((e.clientX - middleofx) / middleofx) * 15;
+                let textscooty = ((e.clientY - middleofy) / middleofy) * 15;
+                splashtexty.style.transform = `translate3d(${textscootx}px, ${textscooty}px, 0px)`;
+            }
+        });
+
+        document.addEventListener("mouseleave", () => {
+            if (!thehome.classList.contains("hidden")) {
+                gigalogo.style.transform = `rotateX(0deg) rotateY(0deg) translate3d(0px, 0px, 0px)`;
+                splashtexty.style.transform = `translate3d(0px, 0px, 0px)`;
+                gigalogo.style.transition = "transform 0.5s ease-out";
+                splashtexty.style.transition = "transform 0.5s ease-out";
+            }
+        });
+
+        document.addEventListener("mouseenter", () => {
+            gigalogo.style.transition = "transform 0.1s ease-out";
+            splashtexty.style.transition = "transform 0.1s ease-out";
+        });
+
+        function fliptheborders(btn, knob, status) {
+            if (status) {
+                btn.classList.replace("bg-bordy", "bg-texty");
+                knob.classList.replace("left-[3px]", "left-[32px]");
+                knob.classList.replace("bg-texty", "bg-bggy");
+            } else {
+                btn.classList.replace("bg-texty", "bg-bordy");
+                knob.classList.replace("left-[32px]", "left-[3px]");
+                knob.classList.replace("bg-bggy", "bg-texty");
+            }
+        }
+
+        function updatetoggleui() {
+            fliptheborders(tilttogglr, tiltnugget, is3don);
+            fliptheborders(swear_togglr, swear_nugget, badwords_on);
+            fliptheborders(nsfw_togglr, nsfw_nugget, nasty_on);
+        }
+        updatetoggleui();
+
+        tilttogglr.addEventListener("click", () => {
+            is3don = !is3don;
+            localStorage.setItem("xtal_tilt", is3don ? "yeah" : "nah");
+            updatetoggleui();
+        });
+
+        swear_togglr.addEventListener("click", () => {
+            badwords_on = !badwords_on;
+            localStorage.setItem("xtal_swears", badwords_on ? "yeah" : "nah");
+            updatetoggleui();
+            spit_joke();
+        });
+
+        nsfw_togglr.addEventListener("click", () => {
+            nasty_on = !nasty_on;
+            localStorage.setItem("xtal_nsfw", nasty_on ? "yeah" : "nah");
+            updatetoggleui();
+            plasterthegames();
+        });
+
+        async function showmethetab(tabname) {
+            if (whichtabrn === tabname || flippinpages) return;
+            flippinpages = true;
+
+            let oldpage = whichtabrn === "home" ? thehome : (whichtabrn === "games" ? thegames : (whichtabrn === "settings" ? thesetts : thetvshit));
+            let newpage = tabname === "home" ? thehome : (tabname === "games" ? thegames : (tabname === "settings" ? thesetts : thetvshit));
+
+            document.getElementById("homebtn").classList.replace("opacity-100", "opacity-50");
+            document.getElementById("gamesbtn").classList.replace("opacity-100", "opacity-50");
+            document.getElementById("settingsbtn").classList.replace("opacity-100", "opacity-50");
+            document.getElementById("datvbtn").classList.replace("opacity-100", "opacity-50");
+
+            let pickedbtn = tabname === "home" ? "homebtn" : (tabname === "games" ? "gamesbtn" : (tabname === "settings" ? "settingsbtn" : "datvbtn"));
+            document.getElementById(pickedbtn).classList.replace("opacity-50", "opacity-100");
+
+            oldpage.classList.remove("opacity-100", "translate-y-0", "scale-100");
+            oldpage.classList.add("opacity-0", "translate-y-4", "scale-95");
+
+            await new Promise(r => setTimeout(r, 250));
+
+            oldpage.classList.add("hidden");
+            oldpage.classList.remove("flex");
+
+            if (tabname === "home") {
+                gigalogo.style.transform = `rotateX(0deg) rotateY(0deg) translate3d(0px, 0px, 0px)`;
+                splashtexty.style.transform = `translate3d(0px, 0px, 0px)`;
+                redohomepage();
+            }
+
+            if (tabname === "tv" && document.getElementById("tvbigassbox").innerHTML === "") {
+                getdemtrendingmovs();
+            }
+
+            newpage.classList.remove("hidden");
+            newpage.classList.add("flex");
+
+            await new Promise(r => requestAnimationFrame(r));
+            await new Promise(r => requestAnimationFrame(r));
+
+            newpage.classList.remove("opacity-0", "translate-y-4", "scale-95");
+            newpage.classList.add("opacity-100", "translate-y-0", "scale-100");
+
+            whichtabrn = tabname;
+            flippinpages = false;
+        }
+
+        document.getElementById("homebtn").addEventListener("click", () => showmethetab("home"));
+        document.getElementById("logobtn").addEventListener("click", () => showmethetab("home"));
+        document.getElementById("gamesbtn").addEventListener("click", () => showmethetab("games"));
+        document.getElementById("settingsbtn").addEventListener("click", () => showmethetab("settings"));
+        
+        document.getElementById("datvbtn").addEventListener("click", () => {
+            if(!didseetvwarn) {
+                document.getElementById("tvwarningbox").classList.remove("hidden");
+            } else {
+                showmethetab("tv");
+            }
+        });
+
+        document.getElementById("nvmimscaredbtn").addEventListener("click", () => {
+            document.getElementById("tvwarningbox").classList.add("hidden");
+        });
+
+        document.getElementById("igotanadblockerbtn").addEventListener("click", () => {
+            didseetvwarn = true;
+            localStorage.setItem("xtal_tvwarn", "yeah");
+            document.getElementById("tvwarningbox").classList.add("hidden");
+            showmethetab("tv");
+        });
+
+        document.getElementById("cloakthesitebtn").addEventListener("click", () => {
+            let win = window.open('about:blank', '_blank');
+            if(win) {
+                let doc = win.document;
+                let ifr = doc.createElement("iframe");
+                ifr.src = window.location.href;
+                ifr.style.border = "none";
+                ifr.style.width = "100vw";
+                ifr.style.height = "100vh";
+                ifr.style.margin = "0";
+                doc.body.style.margin = "0";
+                doc.body.style.overflow = "hidden";
+                doc.body.appendChild(ifr);
+                window.location.replace("https://classroom.google.com");
+            } else {
+                yellerror("Pop-up blocked! Please allow pop-ups to use about:blank mode.");
+            }
+        });
+
+        function yellerror(msg) {
+            let thebox = document.getElementById("ohshitbox");
+            let newerr = document.createElement("div");
+            newerr.className = "bg-red-900 border border-red-500 text-white p-2 rounded text-xs font-mono shadow-lg opacity-90 break-words pointer-events-auto";
+            newerr.innerText = msg;
+            thebox.appendChild(newerr);
+            setTimeout(() => {
+                newerr.style.opacity = '0';
+                newerr.style.transition = 'opacity 0.5s';
+                setTimeout(() => newerr.remove(), 500);
+            }, 10000);
+        }
+
+        document.getElementById("clickysearchicon").addEventListener("click", () => {
+            let searchwrap = document.getElementById("searchwrapper");
+            let searchybox = document.getElementById("typebox");
+            
+            showmethetab("games");
+            
+            if (searchwrap.classList.contains("w-0")) {
+                searchwrap.classList.remove("w-0", "opacity-0", "border-transparent", "ml-0");
+                searchwrap.classList.add("w-56", "opacity-100", "border-bordy", "ml-3");
+                searchybox.focus();
+            } else {
+                searchwrap.classList.add("w-0", "opacity-0", "border-transparent", "ml-0");
+                searchwrap.classList.remove("w-56", "opacity-100", "border-bordy", "ml-3");
+                searchybox.value = "";
+                wordz = "";
+                plasterthegames();
+            }
+        });
+
+        async function getdemtrendingmovs() {
+            try {
+                let r = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=${tmdbkey}`);
+                let d = await r.json();
+                plasterthemovies(d.results);
+            } catch(e) {
+                yellerror("tmdb broke cant fetch trending");
+            }
+        }
+
+        async function searchdemmovs(q) {
+            if(!q.trim()) return getdemtrendingmovs();
+            try {
+                let r = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${tmdbkey}&query=${encodeURIComponent(q)}`);
+                let d = await r.json();
+                plasterthemovies(d.results);
+            } catch(e) {
+                yellerror("tmdb broke cant search");
+            }
+        }
+
+        document.getElementById("tvsearchinput").addEventListener("keyup", (e) => {
+            if(e.key === "Enter") searchdemmovs(e.target.value);
+        });
+
+        function plasterthemovies(results) {
+            let dabox = document.getElementById("tvbigassbox");
+            dabox.innerHTML = "";
+
+            let goodstuff = results.filter(x => x.media_type === "movie" || x.media_type === "tv");
+
+            for(let m of goodstuff) {
+                let wrap = document.createElement("div");
+                wrap.className = "relative w-[150px] md:w-[180px] lg:w-[200px] aspect-[2/3] shrink-0 cursor-pointer group transition-all duration-300 hover:scale-105 hover:z-50 hover:shadow-[0_0_20px_rgba(0,0,0,0.8)] rounded-md";
+
+                let theimg = document.createElement("img");
+                theimg.className = "w-full h-full object-cover rounded-md border border-white/10 group-hover:border-white/30 transition-colors";
+                if(m.poster_path) {
+                    theimg.src = "https://image.tmdb.org/t/p/w500" + m.poster_path;
+                } else {
+                    theimg.src = "https://file.garden/aD-3AN4meRKM60om/image.png";
+                }
+                
+                wrap.appendChild(theimg);
+
+                wrap.onclick = () => {
+                    pickdtvid = m.id;
+                    pickdtvname = m.name || m.title;
+                    pickdtype = m.media_type;
+                    document.getElementById("tvpickertitle").innerText = pickdtvname;
+                    document.getElementById("tvpickerdesc").innerText = m.overview || "";
+                    document.getElementById("tvpickerbackdrop").src = m.backdrop_path ? "https://image.tmdb.org/t/p/w1280" + m.backdrop_path : theimg.src;
+                    
+                    if(m.media_type === "movie") {
+                        document.getElementById("tvseasonstuff").classList.add("hidden");
+                    } else {
+                        document.getElementById("tvseasonstuff").classList.remove("hidden");
+                    }
+                    
+                    document.getElementById("tvpickerbox").classList.remove("hidden");
+                };
+
+                dabox.appendChild(wrap);
+            }
+        }
+
+        document.getElementById("nvmcancelpickerbtn").addEventListener("click", () => {
+            document.getElementById("tvpickerbox").classList.add("hidden");
+        });
+
+        document.getElementById("watchthetvbtn").addEventListener("click", () => {
+            let wantsblank = document.getElementById("blankthetv").checked;
+            let s = document.getElementById("tvseasnnum").value || 1;
+            let e = document.getElementById("tvepisodenum").value || 1;
+            document.getElementById("tvpickerbox").classList.add("hidden");
+            yeetintovidlink(pickdtype, pickdtvid, s, e, pickdtvname + (pickdtype === "tv" ? ` S${s} E${e}` : ""), wantsblank);
+        });
+
+        function yeetintovidlink(type, id, s, e, title, doblank) {
+            let daurl = type === "movie" ? `https://vidlink.pro/movie/${id}` : `https://vidlink.pro/tv/${id}/${s}/${e}`;
+            
+            if (doblank) {
+                let win = window.open('about:blank', '_blank');
+                if(win) {
+                    let doc = win.document;
+                    doc.open();
+                    doc.write(`
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>${title || "watching stuff"}</title>
+                            <style>body, html { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background: #000; }</style>
+                        </head>
+                        <body>
+                            <iframe src="${daurl}" style="width: 100vw; height: 100vh; border: none;" allowfullscreen="true"></iframe>
+                        </body>
+                        </html>
+                    `);
+                    doc.close();
+                } else {
+                    yellerror("Pop-up blocked! Allow pop-ups to watch stuff.");
+                }
+            } else {
+                let win = window.open(daurl, '_blank');
+                if(!win) {
+                    yellerror("Pop-up blocked! Allow pop-ups to watch stuff.");
+                }
+            }
+        }
+
+        let playthegame = async (g) => {
+            let hist = JSON.parse(localStorage.getItem("xtal_history") || "[]");
+            hist = hist.filter(x => x !== g.title);
+            hist.unshift(g.title);
+            localStorage.setItem("xtal_history", JSON.stringify(hist));
+
+            let cnts = JSON.parse(localStorage.getItem("xtal_counts") || "{}");
+            cnts[g.title] = (cnts[g.title] || 0) + 1;
+            localStorage.setItem("xtal_counts", JSON.stringify(cnts));
+
+            try {
+                history.pushState({}, '', '?game=' + encodeURIComponent(g.title));
+            } catch(e) {}
+
+            document.title = g.title;
+            setfavicon("https://s2.googleusercontent.com/s2/favicons?domain_url=" + encodeURIComponent(g.url));
+
+            if (!g.isLumin && !g.url.includes("discord")) {
+                try {
+                    fetch(g.url).then(r => r.text()).then(t => {
+                        let parser = new DOMParser();
+                        let doc = parser.parseFromString(t, "text/html");
+                        let titleEl = doc.querySelector("title");
+                        if(titleEl && titleEl.innerText) document.title = titleEl.innerText;
+                        
+                        let iconEl = doc.querySelector("link[rel~='icon']") || doc.querySelector("link[rel='shortcut icon']");
+                        if(iconEl && iconEl.getAttribute("href")) {
+                            let base = new URL(g.url);
+                            let iconUrl = new URL(iconEl.getAttribute("href"), base.href).href;
+                            setfavicon(iconUrl);
+                        }
+                    }).catch(e => {});
+                } catch(e){}
+            }
+
+            let gw = document.getElementById("gamewindow");
+            let gf = document.getElementById("gameframe");
+            document.getElementById("whatgameisit").innerText = g.title;
+
+            activegamerightnow = g;
+            gamestartedat = Date.now();
+
+            if (g.isLumin) {
+                let dafetchedurl = await Lumin.getGameUrl(g.luminId);
+                gf.removeAttribute("srcdoc");
+                gf.src = dafetchedurl.url;
+            } else {
+                let israwhtml = g.url.trim().startsWith("<");
+                let isdiscord = g.url.includes("discordapp.com") || g.url.includes("discord.com");
+
+                if (israwhtml) {
+                    gf.removeAttribute("src");
+                    gf.srcdoc = g.url;
+                } else if (isdiscord) {
+                    gf.removeAttribute("src");
+                    try {
+                        let req = await fetch("https://api.allorigins.win/get?url=" + encodeURIComponent(g.url));
+                        let dat = await req.json();
+                        if (dat && dat.contents) {
+                            gf.srcdoc = dat.contents;
+                        } else {
+                            gf.removeAttribute("srcdoc");
+                            gf.src = g.url;
+                        }
+                    } catch(err) {
+                        gf.removeAttribute("srcdoc");
+                        gf.src = g.url;
+                    }
+                } else {
+                    gf.removeAttribute("srcdoc");
+                    gf.src = g.url;
+                }
+            }
+            
+            gw.classList.remove("hidden");
+            
+            setTimeout(() => {
+                gw.classList.replace("opacity-0", "opacity-100");
+                gf.focus();
+            }, 10);
+        };
+
+        document.getElementById("embiggenbtn").onclick = () => {
+            let theframe = document.getElementById("gameframe");
+            if (theframe.requestFullscreen) {
+                theframe.requestFullscreen();
+            } else if (theframe.webkitRequestFullscreen) {
+                theframe.webkitRequestFullscreen();
+            }
+        };
+
+        let savethatplaytime = () => {
+            if(activegamerightnow && gamestartedat > 0) {
+                let msplayed = Date.now() - gamestartedat;
+                theplaytimes[activegamerightnow.title] = (theplaytimes[activegamerightnow.title] || 0) + msplayed;
+                localStorage.setItem("xtal_playtimes", JSON.stringify(theplaytimes));
+            }
+            gamestartedat = 0;
+            activegamerightnow = null;
+        };
+
+        document.getElementById("popoutthegamebtn").onclick = () => {
+            if(!activegamerightnow) return;
+            let theurl = document.getElementById("gameframe").src;
+            let thesrcdoc = document.getElementById("gameframe").srcdoc;
+            let blankwin = window.open('about:blank', '_blank');
+            if(blankwin) {
+                let doc = blankwin.document;
+                doc.open();
+                doc.write(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>${activegamerightnow.title}</title>
+                        <style>body, html { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background: #000; }</style>
+                    </head>
+                    <body>
+                        <iframe style="width: 100%; height: 100%; border: none;" allowfullscreen="true" 
+                                ${thesrcdoc ? `srcdoc="${thesrcdoc.replace(/"/g, '&quot;')}"` : `src="${theurl}"`}>
+                        </iframe>
+                    </body>
+                    </html>
+                `);
+                doc.close();
+            } else {
+                yellerror("Pop-up blocked! Allow pop-ups to pop out the game.");
+            }
+            document.getElementById("killgamebtn").onclick();
+        };
+
+        document.getElementById("killgamebtn").onclick = () => {
+            savethatplaytime();
+            try {
+                history.pushState({}, '', window.location.pathname);
+            } catch (e) {}
+
+            document.title = ogtitle;
+            if (ogfavicon) {
+                setfavicon(ogfavicon);
+            } else {
+                let l = document.querySelector("link[rel~='icon']");
+                if (l) l.remove();
+            }
+
+            let gw = document.getElementById("gamewindow");
+            let gf = document.getElementById("gameframe");
+            gw.classList.replace("opacity-100", "opacity-0");
+            setTimeout(() => {
+                gw.classList.add("hidden");
+                gf.src = "about:blank";
+                gf.removeAttribute("srcdoc");
+                if(whichtabrn === "home") redohomepage();
+            }, 300);
+        };
+
+        let makethathing = (g, forlist) => {
+            let wrap = document.createElement("div");
+            
+            if (forlist) {
+                wrap.className = "flex w-full h-24 bg-panny border border-bordy rounded-xl p-2 gap-4 items-center cursor-pointer hover:bg-bordy transition-colors shrink-0 group";
+                
+                let isvid = g.imageCover && (g.imageCover.endsWith(".webm") || g.imageCover.endsWith(".mp4"));
+                let theimg = document.createElement(isvid ? "video" : "img");
+                theimg.className = "h-full w-32 object-cover rounded-lg bg-black shrink-0";
+                
+                theimg.onerror = function() {
+                    if (this.getAttribute("dataretry")) return;
+                    this.setAttribute("dataretry", "yeah");
+                    if (g.isLumin) {
+                        Lumin.getImageUrl(g.luminToken).then(u => {
+                            g.imageCover = u;
+                            g.coverTime = Date.now();
+                            this.src = u;
+                        });
+                    }
+                };
+
+                if (isvid) {
+                    theimg.src = g.imageCover;
+                    theimg.autoplay = true; theimg.loop = true; theimg.muted = true; theimg.playsInline = true;
+                    theimg.setAttribute('loop', ''); theimg.setAttribute('autoplay', ''); theimg.setAttribute('muted', ''); theimg.setAttribute('playsinline', '');
+                } else {
+                    if (g.isLumin) {
+                        let rightnow = Date.now();
+                        if (g.imageCover && (rightnow - (g.coverTime || 0) < 300000)) {
+                            theimg.src = g.imageCover;
+                        } else {
+                            Lumin.getImageUrl(g.luminToken).then(u => {
+                                g.imageCover = u;
+                                g.coverTime = Date.now();
+                                theimg.src = u;
+                            }).catch(e => console.log("lumin img err", e));
+                        }
+                    } else {
+                        theimg.src = g.imageCover || "";
+                    }
+                }
+                
+                let infobox = document.createElement("div");
+                infobox.className = "flex flex-col gap-1 overflow-hidden";
+                
+                let t = document.createElement("div");
+                t.className = "text-texty font-bold text-lg truncate";
+                t.innerText = g.title;
+                
+                let gn = document.createElement("div");
+                gn.className = "text-texty opacity-50 text-sm truncate";
+                gn.innerText = g.genres.join(", ");
+                
+                infobox.appendChild(t);
+                infobox.appendChild(gn);
+                
+                let timeandstuff = document.createElement("div");
+                timeandstuff.className = "mt-auto text-xs text-texty opacity-40";
+                let pt = Math.floor((theplaytimes[g.title] || 0) / 60000);
+                if (pt > 0) timeandstuff.innerText = pt + "m played";
+                infobox.appendChild(timeandstuff);
+                
+                wrap.appendChild(theimg);
+                wrap.appendChild(infobox);
+
+                let starwrap = document.createElement("div");
+                starwrap.className = "ml-auto z-10 p-2 cursor-pointer";
+                let isitfav = myfavs.includes(g.title);
+                starwrap.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="${isitfav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" class="${isitfav ? 'text-yellow-400' : 'text-texty opacity-30 hover:opacity-100'} transition-all"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
+                starwrap.onclick = (e) => {
+                    e.stopPropagation();
+                    if(isitfav) myfavs = myfavs.filter(x => x !== g.title);
+                    else myfavs.push(g.title);
+                    localStorage.setItem("xtal_favs", JSON.stringify(myfavs));
+                    plasterthegames();
+                    redohomepage();
+                };
+                wrap.appendChild(starwrap);
+            } else {
+                wrap.className = "relative w-[230px] h-[345px] shrink-0 cursor-pointer group hover:z-50";
+                
+                let flippycard = document.createElement("div");
+                flippycard.className = "w-full h-full bg-panny overflow-hidden relative shadow-lg shadow-black group-hover:shadow-[0_15px_30px_rgba(0,0,0,0.8)]";
+
+                let isvid = g.imageCover && (g.imageCover.endsWith(".webm") || g.imageCover.endsWith(".mp4"));
+                let theimg = document.createElement(isvid ? "video" : "img");
+                theimg.className = "absolute inset-0 w-full h-full object-cover z-0";
+                
+                theimg.onerror = function() {
+                    if (this.getAttribute("dataretry")) return;
+                    this.setAttribute("dataretry", "yeah");
+                    if (g.isLumin) {
+                        Lumin.getImageUrl(g.luminToken).then(u => {
+                            g.imageCover = u;
+                            g.coverTime = Date.now();
+                            this.src = u;
+                        });
+                    }
+                };
+
+                if (isvid) {
+                    theimg.src = g.imageCover;
+                    theimg.autoplay = true; theimg.loop = true; theimg.muted = true; theimg.playsInline = true;
+                    theimg.setAttribute('loop', ''); theimg.setAttribute('autoplay', ''); theimg.setAttribute('muted', ''); theimg.setAttribute('playsinline', '');
+                    flippycard.appendChild(theimg);
+                } else if (g.imageCover || g.isLumin) {
+                    if (g.isLumin) {
+                        let rightnow = Date.now();
+                        if (g.imageCover && (rightnow - (g.coverTime || 0) < 300000)) {
+                            theimg.src = g.imageCover;
+                        } else {
+                            Lumin.getImageUrl(g.luminToken).then(u => {
+                                g.imageCover = u;
+                                g.coverTime = Date.now();
+                                theimg.src = u;
+                            }).catch(e => console.log("lumin img err", e));
+                        }
+                    } else {
+                        theimg.src = g.imageCover;
+                    }
+                    flippycard.appendChild(theimg);
+                }
+
+                let hologramfade = document.createElement("div");
+                hologramfade.className = "absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none opacity-50 transition-opacity duration-300 group-hover:opacity-75";
+                flippycard.appendChild(hologramfade);
+
+                let thept = Math.floor((theplaytimes[g.title] || 0) / 60000);
+                if (thept > 0) {
+                    let pill = document.createElement("div");
+                    pill.className = "absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full z-40 border border-white/10";
+                    pill.innerText = thept + "m played";
+                    flippycard.appendChild(pill);
+                }
+
+                let isitfavcard = myfavs.includes(g.title);
+                let starwrapcard = document.createElement("div");
+                starwrapcard.className = "absolute top-3 right-3 z-40 p-1 cursor-pointer bg-black/40 backdrop-blur-sm rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300";
+                if(isitfavcard) starwrapcard.className = "absolute top-3 right-3 z-40 p-1 cursor-pointer bg-black/40 backdrop-blur-sm rounded-full border border-white/10";
+                starwrapcard.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="${isitfavcard ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" class="${isitfavcard ? 'text-white' : 'text-white'}"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
+                starwrapcard.onclick = (e) => {
+                    e.stopPropagation();
+                    if(isitfavcard) myfavs = myfavs.filter(x => x !== g.title);
+                    else myfavs.push(g.title);
+                    localStorage.setItem("xtal_favs", JSON.stringify(myfavs));
+                    plasterthegames();
+                    redohomepage();
+                };
+                flippycard.appendChild(starwrapcard);
+
+                wrap.appendChild(flippycard);
+
+                if (g.titleLink) {
+                    let topimg = document.createElement("img");
+                    topimg.src = g.titleLink;
+                    
+                    if (g.titlePos === "Bottom Right") {
+                        topimg.className = "absolute bottom-2 right-2 w-16 h-16 z-30 object-contain drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] pointer-events-none transition-all duration-300 group-hover:-translate-y-4 group-hover:scale-110 group-hover:drop-shadow-[0_10px_10px_rgba(0,0,0,1)]";
+                    } else {
+                        topimg.className = "absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-[85%] max-h-24 z-30 object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.9)] pointer-events-none transition-all duration-300 group-hover:-translate-y-8 group-hover:scale-[1.08] group-hover:drop-shadow-[0_15px_15px_rgba(0,0,0,1)]";
+                    }
+                    
+                    flippycard.appendChild(topimg);
+                }
+
+                wrap.addEventListener("mousemove", (e) => {
+                    if (!is3don) return;
+                    let rekt = wrap.getBoundingClientRect();
+                    let mousex = e.clientX - rekt.left;
+                    let mousey = e.clientY - rekt.top;
+                    let centerx = rekt.width / 2;
+                    let centery = rekt.height / 2;
+                    let tiltx = ((mousey - centery) / centery) * -18;
+                    let tilty = ((mousex - centerx) / centerx) * 18;
+                    flippycard.style.transform = `perspective(1000px) rotateX(${tiltx}deg) rotateY(${tilty}deg) scale3d(1.05, 1.05, 1.05)`;
+                });
+
+                wrap.addEventListener("mouseleave", () => {
+                    flippycard.style.transform = "";
+                    flippycard.style.transition = "transform 0.4s ease-out";
+                });
+
+                wrap.addEventListener("mouseenter", () => {
+                    if (!is3don) {
+                        flippycard.style.transition = "transform 0.3s ease-out";
+                        flippycard.style.transform = "scale(1.02) translateY(-4px)";
+                    } else {
+                        flippycard.style.transition = "none";
+                    }
+                });
+            }
+
+            wrap.onclick = () => playthegame(g);
+            return wrap;
+        };
+
+        function plasterthegames() {
+            let dabox = document.getElementById("bigassbox");
+            dabox.innerHTML = "";
+
+            let filteredsht = mygamez.filter(g => {
+                let genrematch = pickedythings.length === 0 || pickedythings.some(r => g.genres.includes(r));
+                let namematch = g.title.toLowerCase().includes(wordz.toLowerCase());
+                let cleanenough = nasty_on ? true : g.nsfw !== "yes";
+                return genrematch && namematch && cleanenough;
+            });
+
+            for (let g of filteredsht) {
+                dabox.appendChild(makethathing(g, modeislist));
+            }
+        }
+
+        let redohomepage = () => {
+            let hs = document.getElementById("homestuff");
+            hs.innerHTML = "";
+            let hist = JSON.parse(localStorage.getItem("xtal_history") || "[]");
+            let cnts = JSON.parse(localStorage.getItem("xtal_counts") || "{}");
+
+            let makeachunk = (titl, gamelist) => {
+                if(gamelist.length === 0) return;
+                let chunk = document.createElement("div");
+                chunk.className = "flex flex-col gap-4 w-full";
+                
+                let t = document.createElement("div");
+                t.className = "text-texty text-2xl font-bold tracking-wide";
+                t.innerText = titl;
+                chunk.appendChild(t);
+
+                let scroller = document.createElement("div");
+                scroller.className = "flex gap-6 overflow-x-auto hidemyscroll pb-4 pt-2 px-2";
+                
+                for(let g of gamelist) {
+                    scroller.appendChild(makethathing(g, false));
+                }
+                
+                chunk.appendChild(scroller);
+                hs.appendChild(chunk);
+            };
+
+            let cleanmz = mygamez.filter(g => nasty_on ? true : g.nsfw !== "yes");
+
+            let demfavs = cleanmz.filter(x => myfavs.includes(x.title));
+            let recentgames = cleanmz.filter(x => hist.includes(x.title)).sort((a,b) => hist.indexOf(a.title) - hist.indexOf(b.title)).slice(0, 10);
+            let popgames = [...cleanmz].sort((a,b) => (cnts[b.title]||0) - (cnts[a.title]||0)).filter(x => (cnts[x.title]||0) > 0).slice(0, 10);
+            
+            let allgenres = [];
+            for(let title of hist) {
+                let g = cleanmz.find(x => x.title === title);
+                if(g) allgenres.push(...g.genres);
+            }
+            let genrecnts = {};
+            for(let gn of allgenres) genrecnts[gn] = (genrecnts[gn]||0) + 1;
+            let topgenre = Object.keys(genrecnts).sort((a,b) => genrecnts[b] - genrecnts[a])[0];
+            
+            let recgames = [];
+            if(topgenre) {
+                recgames = cleanmz.filter(x => x.genres.includes(topgenre) && !hist.includes(x.title)).slice(0, 10);
+            }
+
+            makeachunk("your favorites", demfavs);
+            makeachunk("recently played", recentgames);
+            makeachunk("most popular", popgames);
+            makeachunk("recommended for you", recgames);
+        };
+
+        function makemefilters() {
+            let fbox = document.getElementById("clickybox");
+            let genz = [];
+            
+            mygamez.forEach(g => {
+                g.genres.forEach(gn => {
+                    if (!genz.includes(gn)) genz.push(gn);
+                });
+            });
+            
+            genz.sort();
+
+            for (let gen of genz) {
+                let btn = document.createElement("div");
+                btn.innerText = gen;
+                btn.className = "cursor-pointer text-texty opacity-70 hover:opacity-100 py-1.5 px-3 rounded-xl bg-panny text-sm border border-bordy font-medium transition-colors";
+                
+                btn.onclick = () => {
+                    if (pickedythings.includes(gen)) {
+                        pickedythings = pickedythings.filter(x => x !== gen);
+                        btn.className = "cursor-pointer text-texty opacity-70 hover:opacity-100 py-1.5 px-3 rounded-xl bg-panny text-sm border border-bordy font-medium transition-colors";
+                    } else {
+                        pickedythings.push(gen);
+                        btn.className = "cursor-pointer text-bggy py-1.5 px-3 rounded-xl bg-texty text-sm border border-texty font-medium shadow-md transition-colors";
+                    }
+                    plasterthegames();
+                };
+                
+                fbox.appendChild(btn);
+            }
+        }
+
+        async function doalloftheshit() {
+            try {
+                let rightnow = new Date().getTime();
+                let rawlink = "https://raw.githubusercontent.com/dahahe1/test/main/d.json?nocache=" + rightnow;
+                
+                let req = await fetch(rawlink);
+                
+                if (!req.ok) {
+                    req = await fetch("https://cdn.jsdelivr.net/gh/dahahe1/test/d.json?nocache=" + rightnow);
+                }
+                
+                if (!req.ok) {
+                    yellerror("Failed to load your JSON file. HTTP " + req.status);
+                    return;
+                }
+                
+                let rawtext = await req.text();
+                let cleantext = rawtext.replace(/,\s*(?=[\]}])/g, '');
+                let j = JSON.parse(cleantext);
+                
+                let roughgames = j.games && j.games.games ? j.games.games : j;
+                if (!Array.isArray(roughgames)) {
+                    if (Array.isArray(j.games)) roughgames = j.games;
+                    else if (Array.isArray(j)) roughgames = j;
+                    else roughgames = [];
+                }
+                
+                mygamez = roughgames.map(g => {
+                    let htmlurl = "https://raw.githack.com/freebuisness/html/main";
+                    let coverurl = "https://cdn.jsdelivr.net/gh/freebuisness/covers@main";
+                    
+                    let dacover = g.imageCover || g.cover || "";
+                    if (dacover.includes("{COVER_URL}")) dacover = dacover.replace("{COVER_URL}", coverurl);
+                    
+                    let daurl = g.url || g.game || "";
+
+                    if (daurl.includes("<iframe") && daurl.includes("src=")) {
+                        let matched = daurl.match(/src=["']([^"']+)["']/);
+                        if (matched) daurl = matched[1];
+                    }
+
+                    let israwtext = daurl.trim().startsWith("<");
+
+                    if (!israwtext) {
+                        if (daurl.includes("cdn.jsdelivr.net/gh/")) {
+                            let endbit = daurl.split("cdn.jsdelivr.net/gh/")[1];
+                            if (endbit.includes("@")) {
+                                daurl = "https://raw.githack.com/" + endbit.replace("@", "/");
+                            } else {
+                                let pieces = endbit.split("/");
+                                let theuser = pieces[0];
+                                let therepo = pieces[1];
+                                let therest = pieces.slice(2).join("/");
+                                daurl = "https://raw.githack.com/" + theuser + "/" + therepo + "/main/" + therest;
+                            }
+                        }
+
+                        if (daurl.includes("raw.githubusercontent.com")) {
+                            daurl = daurl.replace("raw.githubusercontent.com", "raw.githack.com");
+                        }
+                        if (daurl.includes("github.com") && daurl.includes("/blob/")) {
+                            daurl = daurl.replace("github.com", "raw.githack.com").replace("/blob/", "/");
+                        }
+
+                        if (daurl.includes("{HTML_URL}")) {
+                            daurl = daurl.replace("{HTML_URL}", htmlurl);
+                        } else if (daurl && !daurl.startsWith("http") && !daurl.startsWith("data:")) {
+                            daurl = htmlurl + "/" + daurl + (daurl.endsWith(".html") ? "" : ".html");
+                        } else if (!daurl) {
+                            daurl = htmlurl + "/372.html";
+                        }
+                    }
+                    
+                    let dafinalname = g.title || g.name || "unknown";
+                    let isbadboy = g.nsfw || "nah";
+                    if (dafinalname.toLowerCase().includes("epstein")) isbadboy = "yes";
+
+                    return {
+                        title: dafinalname,
+                        imageCover: dacover,
+                        url: daurl,
+                        genres: g.genres || g.special || ["misc"],
+                        nsfw: isbadboy,
+                        titleLink: g.titleLink,
+                        titlePos: g.titlePos
+                    };
+                });
+
+                try {
+                    await Lumin.init({ headless: true });
+                    
+                    let allthelumingames = [];
+                    let pageimon = 1;
+                    let maxpages = 1;
+                    
+                    do {
+                        let rawlumin = await Lumin.getGames({ page: pageimon, limit: 100 });
+                        if(rawlumin.games) allthelumingames.push(...rawlumin.games);
+                        maxpages = rawlumin.pages || 1;
+                        pageimon++;
+                    } while(pageimon <= maxpages);
+
+                    let thebannedones = ["spank the monkey, bogs favorites"];
+                    
+                    let lumingamesready = allthelumingames.filter(g => {
+                        let n = (g.name || "").toLowerCase().trim();
+                        return !thebannedones.includes(n);
+                    }).map((g) => {
+                        let dafinalname = g.name || "unknown lumin";
+                        let isbadboy = "nah";
+                        if (dafinalname.toLowerCase().includes("epstein")) isbadboy = "yes";
+
+                        return {
+                            title: dafinalname,
+                            imageCover: "",
+                            luminToken: g.image_token,
+                            url: "lumin:" + g.id,
+                            genres: [g.category || "lumin"],
+                            nsfw: isbadboy,
+                            isLumin: true,
+                            luminId: g.id,
+                            coverTime: 0
+                        };
+                    });
+
+                    mygamez = mygamez.concat(lumingamesready);
+                } catch(le) {}
+
+                let seenem = {};
+                let freshgamez = [];
+                for(let g of mygamez) {
+                    let cleanname = g.title.toLowerCase().trim();
+                    if(!seenem[cleanname]) {
+                        seenem[cleanname] = true;
+                        freshgamez.push(g);
+                    }
+                }
+                mygamez = freshgamez;
+                
+                document.getElementById("typebox").addEventListener("input", (e) => {
+                    showmethetab("games");
+                    wordz = e.target.value;
+                    plasterthegames();
+                });
+
+                updatemodeui();
+                makemefilters();
+                plasterthegames();
+                redohomepage();
+                showmethetab("home");
+
+                let demurlstuff = new URLSearchParams(window.location.search);
+                let linkgame = demurlstuff.get("game");
+                if (linkgame) {
+                    let fundit = mygamez.find(x => x.title === linkgame);
+                    if (fundit) {
+                        playthegame(fundit);
+                    }
+                }
+
+            } catch(e) {
+                yellerror("Failed to boot up: " + e.message);
+            }
+        }
+    </script>
+</body>
+</html>
