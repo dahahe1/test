@@ -7197,26 +7197,4 @@
       "port"
     ]
   },
-  {
-    "id": 806,
-    "name": "Slendytubbies 2",
-    "cover": "{COVER_URL}/806.png",
-    "url": "{HTML_URL}/806.html",  
-    "author": "Sean Toman",
-    "authorLink": "https://www.zeoworks.com/",
-    "special": [
-      "port"
-    ]
-  },
-  {
-    "id": 807,
-    "name": "Slendytubbies 2D",
-    "cover": "{COVER_URL}/807.png",
-    "url": "{HTML_URL}/807.html",  
-    "author": "Sean Toman",
-    "authorLink": "https://www.zeoworks.com/",
-    "special": [
-      "port"
-    ]
-  }
 }
