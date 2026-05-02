@@ -127,14 +127,14 @@ function createTab(makeActive = true) {
     const tab = {
         id: nextTabId++,
         title: "New Tab",
-        url: "NT.html",
+        url: "https://cdn.jsdelivr.net/gh/dahahe1/test/browser/NT.html",
         frame: frame,
         loading: false,
         favicon: null,
         skipTimeout: null
     };
 
-    frame.frame.src = "NT.html";
+    frame.frame.src = "https://cdn.jsdelivr.net/gh/dahahe1/test/browser/NT.html";
 
     frame.addEventListener("urlchange", (e) => {
         tab.url = e.url;
@@ -178,7 +178,7 @@ function createTab(makeActive = true) {
             if (title) tab.title = title;
         } catch { }
 
-        if (frame.frame.contentWindow.location.href.includes('NT.html')) {
+        if (frame.frame.contentWindow.location.href.includes('https://cdn.jsdelivr.net/gh/dahahe1/test/browser/NT.html')) {
             tab.title = "New Tab";
             tab.url = "";
             tab.favicon = null;
@@ -287,7 +287,7 @@ function updateAddressBar() {
     const bar = document.getElementById("address-bar");
     const tab = getActiveTab();
     if (bar && tab) {
-        bar.value = (tab.url && !tab.url.includes("NT.html")) ? tab.url : "";
+        bar.value = (tab.url && !tab.url.includes("https://cdn.jsdelivr.net/gh/dahahe1/test/browser/NT.html")) ? tab.url : "";
     }
 }
 
