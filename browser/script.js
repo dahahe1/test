@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         reg.update();
 
-        const connection = new BareMux.BareMuxConnection(basePath + "bareworker.js");
+        const connection = new BareMux.BareMuxConnection("https://cdn.jsdelivr.net/gh/dahahe1/test/browser/bareworker.js");
         await connection.setTransport("https://cdn.jsdelivr.net/npm/@mercuryworkshop/epoxy-transport@2.1.28/dist/index.mjs", [{ wisp: wispUrl }]);
     }
 
