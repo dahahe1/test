@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     await scramjet.init();
 
     if ('serviceWorker' in navigator) {
-        const reg = await navigator.serviceWorker.register('https://cdn.jsdelivr.net/gh/dahahe1/test/browser/sw.js', { scope: basePath });
+       const reg = await navigator.serviceWorker.register(basePath + 'sw.js', { scope: basePath });
         await navigator.serviceWorker.ready;
         const wispUrl = localStorage.getItem("proxServer") || DEFAULT_WISP;
 
