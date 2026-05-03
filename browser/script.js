@@ -127,14 +127,14 @@ function createTab(makeActive = true) {
     const tab = {
         id: nextTabId++,
         title: "New Tab",
-        url: "https://cdn.jsdelivr.net/gh/dahahe1/test/browser/NT.html",
+        url: basePath + "NT.html",
         frame: frame,
         loading: false,
         favicon: null,
         skipTimeout: null
     };
 
-    frame.frame.src = "https://cdn.jsdelivr.net/gh/dahahe1/test/browser/NT.html";
+   frame.frame.src = basePath + "NT.html";
 
     frame.addEventListener("urlchange", (e) => {
         tab.url = e.url;
@@ -178,7 +178,7 @@ function createTab(makeActive = true) {
             if (title) tab.title = title;
         } catch { }
 
-        if (frame.frame.contentWindow.location.href.includes('https://cdn.jsdelivr.net/gh/dahahe1/test/browser/NT.html')) {
+       if (frame.frame.contentWindow.location.href.includes('NT.html')) {
             tab.title = "New Tab";
             tab.url = "";
             tab.favicon = null;
