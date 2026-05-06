@@ -39,6 +39,18 @@
         "notes": "now in 2d?"
       },
       {
+        "title": "SMLWiki",
+        "imageCover": "https://cdn.jsdelivr.net/gh/dahahe1/smlwiki/smlwiki.png",
+        "gameId": 5308206,
+        "genres": ["Horror"],
+        "platforms": ["PC"],
+        "releaseYear": 2015,
+        "url": "https://cdn.jsdelivr.net/gh/dahahe1/smlwiki/index.html",
+        "game": "ST2D",
+        "status": "active",
+        "notes": "now in 2d?"
+      },
+      {
         "title": "Whos Your Daddy?",
         "imageCover": "https://cdn2.steamgriddb.com/thumb/e888d54c6981b4e7e92bbd874655a3bf.jpg",
         "gameId": 5267801,
