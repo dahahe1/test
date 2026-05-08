@@ -21,7 +21,7 @@
         "genres": ["Horror", "Multiplayer"],
         "platforms": ["PC"],
         "game": "ST2",
-        "url": "https://cdn.jsdelivr.net/gh/web-ports/slendytubbies/c9826987d4ffed47c66024555f342b063ceb2d15/index.html",
+        "url": "http://cdn.jsdelivr.net/gh/web-ports/slendytubbies@c982698/2/index.html",
         "releaseYear": 2014,
         "status": "active",
         "notes": "spookier tubbies"
