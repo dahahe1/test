@@ -7209,4 +7209,386 @@
       "port"
     ]
   },
+      {
+    "id": 808,
+    "name": "Spaceflight Simulator",
+    "cover": "{COVER_URL}/808.png",
+    "url": "{HTML_URL}/808.html",  
+    "author": "Team Curiosity",
+    "authorLink": "https://store.steampowered.com/app/1718870/Spaceflight_Simulator/",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 809,
+    "name": "Rhythm Heaven",
+    "cover": "{COVER_URL}/809.png",
+    "url": "{HTML_URL}/809.html",  
+    "author": "Kazuyoshi Osawa, Nintendo",
+    "authorLink": "https://www.nintendo.com/us/store/products/rhythm-heaven-groove-switch/",
+    "special": [
+      "emulator",
+      "nds"
+    ]
+  },
+  {
+    "id": 810,
+    "name": "Need For Speed: Carbon",
+    "cover": "{COVER_URL}/810.png",
+    "url": "{HTML_URL}/810-fix.html",  
+    "author": "EA Sports",
+    "authorLink": "https://www.ea.com/en/games/need-for-speed",
+    "special": [
+      "emulator",
+      "nds"
+    ]
+  },
+  {
+    "id": 811,
+    "name": "Need For Speed: Most Wanted",
+    "cover": "{COVER_URL}/811.png",
+    "url": "{HTML_URL}/811.html",  
+    "author": "EA Sports",
+    "authorLink": "https://www.ea.com/en/games/need-for-speed",
+    "special": [
+      "emulator",
+      "gba"
+    ]
+  },
+  {
+    "id": 812,
+    "name": "Need For Speed: Underground 2",
+    "cover": "{COVER_URL}/812.png",
+    "url": "{HTML_URL}/812.html",  
+    "author": "EA Sports",
+    "authorLink": "https://www.ea.com/en/games/need-for-speed",
+    "special": [
+      "emulator",
+      "gba"
+    ]
+  },
+  {
+    "id": 813,
+    "name": "Five Nights at Frickbear's 3",
+    "cover": "{COVER_URL}/813.png",
+    "url": "{HTML_URL}/813-f3.html",  
+    "author": "SpookyRick, Reeyuki",
+    "authorLink": "https://gamejolt.com/games/frickbears3/930477",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 814,
+    "name": "MiSide",
+    "cover": "{COVER_URL}/814.png",
+    "url": "{HTML_URL}/814.html",  
+    "author": "AIHASTO",
+    "authorLink": "https://store.steampowered.com/app/2527500/MiSide/",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 815,
+    "name": "Baldi's Basics The Ultra Decompile",
+    "cover": "{COVER_URL}/815.png",
+    "url": "{HTML_URL}/815.html",  
+    "author": "SeenWonderAlex",
+    "authorLink": "https://seenwonderalex.itch.io/baldis-basics-tud"
+  },
+  {
+    "id": 816,
+    "name": "-3",
+    "cover": "{COVER_URL}/816.png",
+    "url": "{HTML_URL}/816.html",  
+    "author": "Mauzer2137",
+    "authorLink": "https://gamebanana.com/mods/647218",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 817,
+    "name": "-b",
+    "cover": "{COVER_URL}/817.png",
+    "url": "{HTML_URL}/817-f.html",  
+    "author": "bermud",
+    "authorLink": "https://gamebanana.com/mods/669311",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 818,
+    "name": "t³ (T cubed)",
+    "cover": "{COVER_URL}/818.png",
+    "url": "{HTML_URL}/818.html",  
+    "author": "Blidb",
+    "authorLink": "https://gamebanana.com/mods/674558",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 819,
+    "name": "20 Minutes Till Dawn",
+    "cover": "{COVER_URL}/819.png",
+    "url": "{HTML_URL}/819-fix2.html",  
+    "author": "Flanne, Rah, Bog",
+    "authorLink": "https://store.steampowered.com/app/1966900/20_Minutes_Till_Dawn/",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 820,
+    "name": "Phoenix Wright - Ace Attorney",
+    "cover": "{COVER_URL}/820.png",
+    "url": "{HTML_URL}/820-fix.html",  
+    "author": "Capcom",
+    "authorLink": "https://www.ace-attorney.com/",
+    "special": [
+      "emulator",
+      "nds"
+    ]
+  },
+  {
+    "id": 821,
+    "name": "Apollo Justice - Ace Attorney",
+    "cover": "{COVER_URL}/821.png",
+    "url": "{HTML_URL}/821-fix.html",  
+    "author": "Capcom",
+    "authorLink": "https://www.ace-attorney.com/",
+    "special": [
+      "emulator",
+      "nds"
+    ]
+  },
+  {
+    "id": 822,
+    "name": "Phoenix Wright - Ace Attorney - Justice for All",
+    "cover": "{COVER_URL}/822.png",
+    "url": "{HTML_URL}/822.html",  
+    "author": "Capcom",
+    "authorLink": "https://www.ace-attorney.com/",
+    "special": [
+      "emulator",
+      "nds"
+    ]
+  },
+  {
+    "id": 823,
+    "name": "Ace Attorney Investigations - Miles Edgeworth",
+    "cover": "{COVER_URL}/823.png",
+    "url": "{HTML_URL}/823-fix.html",  
+    "author": "Capcom",
+    "authorLink": "https://www.ace-attorney.com/",
+    "special": [
+      "emulator",
+      "nds"
+    ]
+  },
+  {
+    "id": 824,
+    "name": "Phoenix Wright - Ace Attorney - Trials and Tribulations",
+    "cover": "{COVER_URL}/824.png",
+    "url": "{HTML_URL}/824.html",  
+    "author": "Capcom",
+    "authorLink": "https://www.ace-attorney.com/",
+    "special": [
+      "emulator",
+      "nds"
+    ]
+  },
+  {
+    "id": 825,
+    "name": "Cruelty Squad",
+    "cover": "{COVER_URL}/825.png",
+    "url": "{HTML_URL}/825.html",  
+    "author": "Consumer Softproducts, dizzy",
+    "authorLink": "https://store.steampowered.com/app/1388770/Cruelty_Squad/",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 826,
+    "name": "Just Shapes & Beats",
+    "cover": "{COVER_URL}/826.png",
+    "url": "{HTML_URL}/826-f.html",  
+    "author": "Berzerk Studio",
+    "authorLink": "https://store.steampowered.com/app/531510/Just_Shapes__Beats/",
+    "special": [
+      "port"
+    ],
+    "featured": true
+  },
+  {
+    "id": 827,
+    "name": "Totally Accurate Battle Simulator (TABS)",
+    "cover": "{COVER_URL}/827.png",
+    "url": "{HTML_URL}/827-f.html",  
+    "author": "Landfall",
+    "authorLink": "https://store.steampowered.com/app/508440/Totally_Accurate_Battle_Simulator/",
+    "special": [
+      "port"
+    ],
+    "featured": true
+  },
+  {
+    "id": 828,
+    "name": "Animal Crossing (GAMECUBE)",
+    "cover": "{COVER_URL}/828.png",
+    "url": "{HTML_URL}/828.html",  
+    "author": "Nintendo, turtlekiosk",
+    "authorLink": "https://nintendo.com",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 829,
+    "name": "Touhou 1 Touhou-Reiiden",
+    "cover": "{COVER_URL}/829.png",
+    "url": "{HTML_URL}/829.html",  
+    "author": "Jun'ya Ōta (\"ZUN\")",
+    "authorLink": "https://en.touhougarakuta.com/eastern-playing-en/toho-no-asobikata-en/",
+    "special": [
+      "emulator",
+      "dos"
+    ]
+  },
+  {
+    "id": 830,
+    "name": "Touhou 2 Touhou-Fuumaroku",
+    "cover": "{COVER_URL}/830.png",
+    "url": "{HTML_URL}/830.html",  
+    "author": "Jun'ya Ōta (\"ZUN\")",
+    "authorLink": "https://en.touhougarakuta.com/eastern-playing-en/toho-no-asobikata-en/",
+    "special": [
+      "emulator",
+      "dos"
+    ]
+  },
+  {
+    "id": 831,
+    "name": "Touhou 3 Touhou-Yumejikuu",
+    "cover": "{COVER_URL}/831.png",
+    "url": "{HTML_URL}/831.html",  
+    "author": "Jun'ya Ōta (\"ZUN\")",
+    "authorLink": "https://en.touhougarakuta.com/eastern-playing-en/toho-no-asobikata-en/",
+    "special": [
+      "emulator",
+      "dos"
+    ]
+  },
+  {
+    "id": 832,
+    "name": "Touhou 4 Touhou-Gensokyou",
+    "cover": "{COVER_URL}/832.png",
+    "url": "{HTML_URL}/832.html",  
+    "author": "Jun'ya Ōta (\"ZUN\")",
+    "authorLink": "https://en.touhougarakuta.com/eastern-playing-en/toho-no-asobikata-en/",
+    "special": [
+      "emulator",
+      "dos"
+    ]
+  },
+  {
+    "id": 833,
+    "name": "Touhou 5 Touhou-Kaikidan",
+    "cover": "{COVER_URL}/833.png",
+    "url": "{HTML_URL}/833.html",  
+    "author": "Jun'ya Ōta (\"ZUN\")",
+    "authorLink": "https://en.touhougarakuta.com/eastern-playing-en/toho-no-asobikata-en/",
+    "special": [
+      "emulator",
+      "dos"
+    ]
+  },
+  {
+    "id": 834,
+    "name": "I Wanna Be The Guy",
+    "cover": "{COVER_URL}/834.png",
+    "url": "{HTML_URL}/834.html",  
+    "author": "Michael \"Kayin\" O'Reilly",
+    "authorLink": "https://iwbtg.kayin.moe/",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 835,
+    "name": "YoHoHo.io",
+    "cover": "{COVER_URL}/835.png",
+    "url": "{HTML_URL}/835.html",  
+    "author": "Exodragon Games",
+    "authorLink": "https://exodragon.com/"
+  },
+  {
+    "id": 836,
+    "name": "Friday Night Funkin vs Shucks v2",
+    "cover": "{COVER_URL}/836.png",
+    "url": "{HTML_URL}/836.html",  
+    "author": "CurtisDev",
+    "authorLink": "https://gamebanana.com/mods/519908",
+    "special": [
+      "fnf"
+    ]
+  },
+  {
+    "id": 837,
+    "name": "Into Space 2",
+    "cover": "{COVER_URL}/837.png",
+    "url": "{HTML_URL}/837.html",  
+    "author": "Armor Games",
+    "authorLink": "https://www.newgrounds.com/portal/view/603934",
+    "special": [
+      "flash"
+    ]
+  },
+  {
+    "id": 838,
+    "name": "Vena",
+    "cover": "{COVER_URL}/838.png",
+    "url": "{HTML_URL}/838.html",  
+    "author": "Leonhard Kohl-Lörting",
+    "authorLink": "https://loerting.itch.io/vena"
+  },
+  {
+    "id": 839,
+    "name": "s.p.l.i.t",
+    "cover": "{COVER_URL}/839.png",
+    "url": "{HTML_URL}/839.html",  
+    "author": "Mike Klubnika",
+    "authorLink": "https://store.steampowered.com/app/3684610/split/",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 840,
+    "name": "My Talking Baby Hippo",
+    "cover": "{COVER_URL}/840.png",
+    "url": "{HTML_URL}/840-fix2.html",  
+    "author": "Outfit7",
+    "authorLink": "https://outfit7.com/",
+    "special": [
+      "port"
+    ]
+  },
+  {
+    "id": 841,
+    "name": "WarioWare: Touched!",
+    "cover": "{COVER_URL}/841.png",
+    "url": "{HTML_URL}/841.html",  
+    "author": "Nintendo",
+    "authorLink": "https://nintendo.com",
+    "special": [
+      "emulator",
+      "nds"
+    ]
+  }
 }
