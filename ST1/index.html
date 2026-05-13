@@ -3,29 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>SLENDYTUBBIES 1</title>
-    <style>
-      body {
-        background-color: black;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-      #gameContainer {
-        width: 100vw !important;
-        height: 100vh !important;
-      }
-      canvas {
-        width: 100% !important;
-        height: 100% !important;
-      }
-    </style>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/ST1.json");
-    </script>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+    <title>Slendytubbies</title>
   </head>
-  <body>
-    <div id="gameContainer"></div>
+  <body style="text-align: left; padding: 0; border: 0; margin: 0; overflow: hidden; background: #000000;">
+    <canvas id="unity-canvas" tabindex="-1" style="width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; background: #000000;"></canvas>
+    <script src="Build/Build.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/Build.data",
+        frameworkUrl: "Build/Build.framework.js",
+        codeUrl: "Build/Build.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Zeoworks",
+        productName: "Slendytubbies",
+        productVersion: "1.11"
+      });
+    </script>
   </body>
 </html>
